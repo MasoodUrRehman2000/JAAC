@@ -14,10 +14,14 @@
     <nav class="navbar">
         <div class="container nav-flex">
             <div class="logo">
-                <img src="https://upload.wikimedia.org/wikipedia/en/thumb/1/1b/Jammu_Kashmir_Joint_Awami_Action_Committee_Logo.png/250px-Jammu_Kashmir_Joint_Awami_Action_Committee_Logo.png" alt="JAAC Logo" class="nav-logo-img">
-                <div>Kashmir Community <span>Brussels</span></div>
+                Kashmir Community <span>Brussels</span>
             </div>
-            <ul class="nav-links">
+            
+            <!-- Mobile Menu Button -->
+            <button class="mobile-menu-btn" id="mobile-menu-btn">&#9776;</button>
+
+            <!-- Navigation Links -->
+            <ul class="nav-links" id="nav-links">
                 <li><a href="#context">The Context</a></li>
                 <li><a href="#cases">Urgent Cases</a></li>
                 <li><a href="#demands">38 Demands</a></li>
@@ -36,7 +40,7 @@
             </div>
             <div class="hero-visual">
                 <div class="image-wrapper">
-                    <!-- Path updated to look inside your imgs/ folder. Filters and overlay removed. -->
+                    <!-- Image path (no filters, uncropped) -->
                     <img src="imgs/lady_with_child.png" alt="Crying mother and child - Urgent Appeal" class="poster-image">
                 </div>
             </div>
@@ -158,6 +162,9 @@
     <!-- Footer -->
     <footer>
         <div class="container text-center">
+            <!-- JAAC Logo Moved to Footer -->
+            <img src="https://upload.wikimedia.org/wikipedia/en/thumb/1/1b/Jammu_Kashmir_Joint_Awami_Action_Committee_Logo.png/250px-Jammu_Kashmir_Joint_Awami_Action_Committee_Logo.png" alt="JAAC Logo" class="footer-logo">
+            
             <h2 style="font-family: 'Oswald', sans-serif; text-transform: uppercase; margin-bottom: 1rem; color: #fff;">Amplify The Voices</h2>
             <p style="color: #999; margin-bottom: 2rem;">Share this information with your local representatives, human rights organizations, and international media.</p>
             <div class="tags">
@@ -169,5 +176,22 @@
         </div>
     </footer>
 
+    <!-- Mobile Menu Script -->
+    <script>
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const navLinks = document.getElementById('nav-links');
+        
+        // Toggle menu open/close
+        menuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Close menu when a link is clicked
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+    </script>
 </body>
 </html>
